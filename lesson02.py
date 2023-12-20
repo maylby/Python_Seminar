@@ -15,13 +15,28 @@ N! = 1 * 2 * 3 * … * N (произведение всех чисел от 1 д
 # Input: 5
 # Output: 120
 
+
+'''Решение 1 в обратном порядке от N до 1'''
+
+n = int(input('Input number N: ', ))
+res = 1
+while n > 0:
+    res *= n
+    n -= 1
+print(f'result = {res}')
+
+
+'''Решение 2 в соответствии с условием от 1 до N'''
+
 num = int(input('Input number N: ', ))
 result = 1
-
-while num > 0:
-    result *= num
-    num -= 1
-print(f'result = {result}')
+x = 1
+i = 0
+while i < num:
+    result *= x
+    x += 1
+    i += 1
+    print(f'result = {result}')
 
 
 # 00:54:00
