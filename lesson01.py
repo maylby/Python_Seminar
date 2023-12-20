@@ -209,11 +209,11 @@
 # # 3 2 4 -> yes
 # # 3 2 1 -> no
 
-a = int(input('Input number A: ', ))
-b = int(input('Input number B: ', ))
-c = int(input('Input number C: ', ))
+# a = int(input('Input number A: ', ))
+# b = int(input('Input number B: ', ))
+# c = int(input('Input number C: ', ))
 
-if c % a == 0 or c % b == 0:
-    if c != a and c != b and c < b * a:
-        print('a, b, c =', f'{a}, {b}, {c} -> yes')
-else: print('a, b, c =', f'{a}, {b}, {c} -> no')
+# if c % a == 0 or c % b == 0:
+#     if c != a and c != b and c < b * a:
+#         print('a, b, c =', f'{a}, {b}, {c} -> yes')
+# else: print('a, b, c =', f'{a}, {b}, {c} -> no')
