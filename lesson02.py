@@ -15,6 +15,14 @@ N! = 1 * 2 * 3 * … * N (произведение всех чисел от 1 д
 # Input: 5
 # Output: 120
 
+num = int(input('Input number N: ', ))
+result = 1
+
+while num > 0:
+    result *= num
+    num -= 1
+print(f'result = {result}')
+
 
 # 00:54:00
 
@@ -42,18 +50,18 @@ N! = 1 * 2 * 3 * … * N (произведение всех чисел от 1 д
 то есть выведите такое число n, что φ(n)= A. 
 Если А не является числом Фибоначчи, выведите число -1.'''
 
-# Input: 5
-# Output: 6
+# # Input: 5
+# # Output: 6
 
-n = int(input('Input number: ', ))
-f1 = 0
-f2 = 1
-f3 = 0
-i = 1
-while f3 < n:
-    f3 = f1 + f2
-    f1 = f2
-    f2 = f3
-    i += 1
-    print(f'f3 = {f3}; i = {i}')
-    if f3 > n: print(f'n = {n} -> not a fibonacci number')
+# n = int(input('Input number: ', ))
+# f1 = 0
+# f2 = 1
+# f3 = 0
+# i = 1
+# while f3 < n:
+#     f3 = f1 + f2
+#     f1 = f2
+#     f2 = f3
+#     i += 1
+#     print(f'f3 = {f3}; i = {i}')
+#     if f3 > n: print(f'n = {n} -> not a fibonacci number')
