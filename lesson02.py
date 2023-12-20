@@ -22,15 +22,15 @@ N! = 1 * 2 * 3 * … * N (произведение всех чисел от 1 д
 # Найти сумму пяти чисел, 
 # каждое следующее из которых меньше предыдущего на единицу
 
-x = int(input('Input number: ', ))
-sum = 0
-# x = 5
-while x > 0:
-    print(sum)
-    sum += x
-    x -= 1
-    result = int(sum)
-print(sum, 'result =', result) # 1+2+3+4+5
+# x = int(input('Input number: ', ))
+# sum = 0
+# # x = 5
+# while x > 0:
+#     print(sum)
+#     sum += x
+#     x -= 1
+#     result = int(sum)
+# print(sum, 'result =', result) # 1+2+3+4+5
 
 
 # 00:57:00
@@ -45,3 +45,15 @@ print(sum, 'result =', result) # 1+2+3+4+5
 # Input: 5
 # Output: 6
 
+n = int(input('Input number: ', ))
+f1 = 0
+f2 = 1
+f3 = 0
+i = 1
+while f3 < n:
+    f3 = f1 + f2
+    f1 = f2
+    f2 = f3
+    i += 1
+    print(f'f3 = {f3}; i = {i}')
+    if f3 > n: print(f'n = {n} -> not a fibonacci number')
