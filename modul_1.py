@@ -87,7 +87,7 @@ numpy.random.randint(a, b, s).tolist()  # должно быть в 1.5-2 раз�
 '''
 import numpy as np # Pyhton не видит NumPy?
 lst = np.random.randint(-10, 10, 20) # 'random.randint' опять не определяется
-print(lst)
+# print(lst)
 
 '''
 Можно и матрицы легко создавать:
