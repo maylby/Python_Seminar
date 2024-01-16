@@ -44,6 +44,27 @@ m - кол-во элементов второго множества.
 # 6 12
 
 
+# list_n = '2 4 6 8 10 12 10 8 6 4 2'
+# list_m = '3 6 9 12 15 18 2'
+# # print(arr_n.split())
+# n = print(len(list_n.split()), end = " ")
+# m = print(len(list_m.split()))
+# print(list_n)
+# print(list_m)
+
+# set_n = set(list_n.split())
+# set_m = set(list_m.split())
+# # print(set_n)
+# # print(set_m)
+
+# if set_n != set_m:
+#     # result = sorted(set_n.intersection(set_m))  # 'intersection' - поиск 
+#                                                 # пересечения множеств
+#     result = sorted(set_n & set_m)  # '&' - амперсент, другой способ 
+#                                     # поиска пересечения множеств
+#     print(*result) # Как вывести значения в порядке возрастания?
+
+
 
 """
 Задача 24: 
@@ -78,6 +99,7 @@ m - кол-во элементов второго множества.
 # for i in range(len(arr)):
 #     count.append(arr[i-2] + arr[i-1] + arr[i])
 # print('max =', max(count))
+
 
 
 # 00:34:00
