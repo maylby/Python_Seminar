@@ -177,3 +177,54 @@ m - кол-во элементов второго множества.
 # b = set(var3.split())
 # i = a.intersection(b)
 # print(*sorted(i))
+
+
+# 00:41:00
+
+'''
+Сергей Сердюк 
+Задача 31. Решение в группах
+Последовательностью Фибоначчи называется последовательность чисел a0, a1, ..., an, ..., где
+a0 = 0, a1 = 1, ak = ak-1 + ak-2 (k > 1). 
+Требуется найти N-е число Фибоначчи
+
+Input: 7 
+Output: 21
+Задание необходимо решать через рекурсию
+'''
+
+a = int(input('Input number A: '))
+def fib(a):
+    if a == 0: return 0 
+    if a in [1, 2]: return 1
+    return fib(a-1) + fib(a-2)
+list_a = []
+for i in range(0, a): 
+    list_a.append(fib(i)) # "append" - добавление каждого полученного значения 
+                          # в конец текущего списка (слева направо)
+print(list_a)
+
+
+
+""" 
+Найти факториал числа 'x'
+
+Вариант 1
+"""
+x = int(input('Input number X: '))
+res = 1
+for i in range(res, x + 1):
+    res *= i
+print(f'{x}! = {res}')
+print()
+
+'''
+Вариант 2
+'''
+n = int(input('Input number N: '))
+def factorial(n):
+    res = 1
+    for i in range(1, n + 1):
+        res *= i
+    return res
+print(factorial(n))
