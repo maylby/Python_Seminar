@@ -126,23 +126,28 @@ m - кол-во элементов второго множества.
 Вариант 2 (цикл 'while')
 (Генадий Ионов)
 '''
-# n = int(input('Input quantity numbers: '))
-# arr = [] 
+n = int(input('Input quantity numbers: '))
+arr = [] 
 
-# from random import randint # вставил рандомный ввод
-# for i in range(n):
-#     arr.append(randint(1, 10)) 
-# print(f'{n} -> {arr}')
+from random import randint # вставил рандомный ввод
+for i in range(n):
+    arr.append(randint(1, 10)) 
+print(f'{n} -> {arr}')
 
-# temp = 0
-# count = 0
-# maxNum = 0
+temp = 0
+count = 0
+maxNum = 0
 
-# while count < len(arr):
-#     temp = arr.pop(-1)  # <- объединил в одну строку 
-#                         # temp = arr[-1] и arr.pop(-1)
-#     arr.insert(0, temp)
-#     count += 1
-#     a = arr[i-2] + arr[i-1] + arr[i] # заменил цифры (1,2,3) на индекс (i)
-#     if a > maxNum: maxNum = a
-# print(maxNum)
+while count < len(arr):
+    temp = arr.pop(-1)  # <- объединил в одну строку 
+                        # temp = arr[-1] и arr.pop(-1), т.к.
+                        # метод pop() не только удаляет элемент, но
+                        # и возвращает, т.е. записывает его значение
+    arr.insert(0, temp)
+    count += 1
+    a = arr[i-2] + arr[i-1] + arr[i] # трёх ближайших значений
+                                     # заменил цифры (1,2,3) на индекс (i)
+    if a > maxNum: maxNum = a # определение максимальной суммы
+print(maxNum)
+
+
