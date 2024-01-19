@@ -25,6 +25,7 @@
 # ('+5', ['+52134567890']) 
 # ('+6', ['+61234576890']) 
 # ('+7', ['+71234567890', '+71234567854', '+71232267890'])
+
 """
 Решение (???)
 """
@@ -64,7 +65,7 @@ m - кол-во элементов второго множества.
 
 # list_n = '2 4 6 8 10 12 10 8 6 4 2'
 # list_m = '3 6 9 12 15 18 2'
-# # print(arr_n.split())
+
 # n = print(len(list_n.split()), end = " ")
 # m = print(len(list_m.split()))
 # print(list_n)
@@ -72,15 +73,16 @@ m - кол-во элементов второго множества.
 
 # set_n = set(list_n.split())
 # set_m = set(list_m.split())
-# # print(set_n)
-# # print(set_m)
+# # print(set_n) # проверочный вывод на экран
+# # print(set_m) # проверочный вывод на экран
 
-# if set_n != set_m:
-#     # result = sorted(set_n.intersection(set_m))  # 'intersection' - поиск 
+# if set_n != set_m: # print(*sorted(set_n & set_m)) # запись в одну строку
+#     result = sorted(set_n.intersection(set_m))  # 'intersection' - поиск 
 #                                                 # пересечения множеств
 #     result = sorted(set_n & set_m)  # '&' - амперсент, другой способ 
 #                                     # поиска пересечения множеств
-#     print(*result) # Как вывести значения в порядке возрастания?
+#     print(*result)  # (???) Не выводит значения в порядке возрастания!
+#                     # Вывод: '12 2 6' <- неупорядоченный результат
 
 
 
@@ -106,6 +108,9 @@ m - кол-во элементов второго множества.
 # # 4 -> 1 2 3 4
 # # 9
 
+"""
+Вариант 1
+"""
 # n = int(input('Input quantity numbers: '))
 # arr = []
 
@@ -126,28 +131,49 @@ m - кол-во элементов второго множества.
 Вариант 2 (цикл 'while')
 (Генадий Ионов)
 '''
-n = int(input('Input quantity numbers: '))
-arr = [] 
+# n = int(input('Input quantity numbers: '))
+# arr = [] 
 
-from random import randint # вставил рандомный ввод
-for i in range(n):
-    arr.append(randint(1, 10)) 
-print(f'{n} -> {arr}')
+# from random import randint # вставил рандомный ввод
+# for i in range(n):
+#     arr.append(randint(1, 10)) 
+# print(f'{n} -> {arr}')
 
-temp = 0
-count = 0
-maxNum = 0
+# temp = 0
+# count = 0
+# maxNum = 0
 
-while count < len(arr):
-    temp = arr.pop(-1)  # <- объединил в одну строку 
-                        # temp = arr[-1] и arr.pop(-1), т.к.
-                        # метод pop() не только удаляет элемент, но
-                        # и возвращает, т.е. записывает его значение
-    arr.insert(0, temp)
-    count += 1
-    a = arr[i-2] + arr[i-1] + arr[i] # трёх ближайших значений
-                                     # заменил цифры (1,2,3) на индекс (i)
-    if a > maxNum: maxNum = a # определение максимальной суммы
-print(maxNum)
+# while count < len(arr):
+#     temp = arr.pop(-1)  # <- объединил в одну строку 
+#                         # temp = arr[-1] и arr.pop(-1), т.к.
+#                         # метод pop() не только удаляет элемент, но
+#                         # и возвращает, т.е. записывает его значение
+#     arr.insert(0, temp)
+#     count += 1
+#     a = arr[i-2] + arr[i-1] + arr[i] # трёх ближайших значений
+#                                      # заменил цифры (1,2,3) на индекс (i)
+#     if a > maxNum: maxNum = a # определение максимальной суммы
+# print(maxNum)
 
 
+# 00:35:55
+"""
+Вариант 2 (Задача 22)
+(Генадий Ионов) 
+"""
+print()
+var1 = '5 4' # количество элементов двух списков (var2 и var3)
+             # количество элементов вводится вручную заранее,
+             # в "Варианте 1" решения, число элементов вычислялось 
+             # автоматически по заданным спискам (var2 и var3),
+             # автоматизация позволяет избежать ошибок при вводе данных
+print(var1)
+
+var2 = '1 3 5 7 9'
+var3 = '2 3 4 5'
+print(f'{var2}\n{var3}')
+
+a = set(var2.split())
+b = set(var3.split())
+i = a.intersection(b)
+print(*sorted(i))
