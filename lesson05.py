@@ -193,17 +193,17 @@ Output: 21
 Задание необходимо решать через рекурсию
 '''
 
-a = int(input('Input number A: '))
-def fib(a):
-    if a == 0: return 0 
-    if a in [1, 2]: return 1
-    return fib(a-1) + fib(a-2)
-list_a = []
-for i in range(0, a): 
-    list_a.append(fib(i)) # "append" - добавление каждого полученного значения 
-                          # в конец текущего списка (слева направо)
-print(list_a)
-
+# a = int(input('Input number A: '))
+# def fib(a):
+#     if a == 0: return 0 
+#     if a in [1, 2]: return 1
+#     return fib(a-1) + fib(a-2)
+# list_a = []
+# for i in range(0, a): 
+#     list_a.append(fib(i)) # "append" - добавление каждого полученного значения 
+#                           # в конец текущего списка (слева направо)
+# print(list_a)
+# print()
 
 
 """ 
@@ -213,10 +213,13 @@ print(list_a)
 """
 x = int(input('Input number X: '))
 res = 1
-for i in range(res, x + 1):
-    res *= i
+for i in range(res, x + 1): res *= i # запись цикла и результата в одну строку
+                                     # 'range' - диапазон от 'res' до 'x',
+                                     # 'x' обозначаем, как 'x + 1', т.к. 
+                                     # последнее число (x) цикл (for) не захватывает
 print(f'{x}! = {res}')
 print()
+
 
 '''
 Вариант 2
@@ -224,7 +227,7 @@ print()
 n = int(input('Input number N: '))
 def factorial(n):
     res = 1
-    for i in range(1, n + 1):
-        res *= i
+    for i in range(res, n + 1): res *= i # запись цикла и результата в одну строку
     return res
-print(factorial(n))
+f = factorial(n)
+print(f'{n}! = {f}')
