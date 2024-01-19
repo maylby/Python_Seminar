@@ -196,14 +196,16 @@ Output: 21
 # a = int(input('Input number A: '))
 # def fib(a):
 #     if a == 0: return 0 
-#     if a in [1, 2]: return 1
+#     if a in [1, 2]: return 1 # Убираем один цикл рекурсии, просто указав 
+#                              # промежуток "[1, 2]", в котором число 'a' равно 1
 #     return fib(a-1) + fib(a-2)
 # list_a = []
 # for i in range(0, a): 
 #     list_a.append(fib(i)) # "append" - добавление каждого полученного значения 
 #                           # в конец текущего списка (слева направо)
-# print(list_a)
-# print()
+# print(list_a)   # вывод последовательности чисел Фибоначчи, заданных промежутком (0, a)
+# print(fib(a-1)) # вывод значения последнего числа последовательности Фибоначчи
+# 		        # из заданного промежутка (0, a)
 
 
 """ 
@@ -211,23 +213,23 @@ Output: 21
 
 Вариант 1
 """
-x = int(input('Input number X: '))
-res = 1
-for i in range(res, x + 1): res *= i # запись цикла и результата в одну строку
-                                     # 'range' - диапазон от 'res' до 'x',
-                                     # 'x' обозначаем, как 'x + 1', т.к. 
-                                     # последнее число (x) цикл (for) не захватывает
-print(f'{x}! = {res}')
-print()
-
+# x = int(input('Input number X: '))
+# res = 1
+# for i in range(res, x + 1): res *= i # запись цикла и результата в одну строку
+#                                      # 'range' - диапазон от 'res' до 'x',
+#                                      # 'x' обозначаем, как 'x + 1', т.к. 
+#                                      # последнее число (x) цикл (for) не захватывает
+# print(f'{x}! = {res}')
+# print()
 
 '''
 Вариант 2
 '''
-n = int(input('Input number N: '))
-def factorial(n):
-    res = 1
-    for i in range(res, n + 1): res *= i # запись цикла и результата в одну строку
-    return res
-f = factorial(n)
-print(f'{n}! = {f}')
+# n = int(input('Input number N: '))
+# def factorial(n):
+#     res = 1
+#     for i in range(res, n + 1): res *= i # запись цикла и результата в одну строку
+#     return res
+# f = factorial(n)
+# print(f'{n}! = {f}')
+
