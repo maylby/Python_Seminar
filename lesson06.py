@@ -74,19 +74,25 @@ print(f'sum: {sum(a, b)}')
 # 00:27:30
 
 ''' Определить дружественная рекурсия или нет '''
+"""
+Дружественные функции - это функции, которые не являются членами класса, 
+однако имеют доступ к его закрытым членам - переменным и функциям,
+"""
+# Sample Input 1: 6
 
-# Sample Input 1:
-# 6
 # 222anton456
 # a1n1t1o1n1
 # 0000a0000n00t00000o000000n
 # gylfole
 # richard
 # ant0n
+
 # Sample Output 1:
 # 1 2 3
-# Sample Input 2:
-# 9
+
+
+# Sample Input 2: 9
+
 # osfjwoiergwoignaewpjofwoeijfnwfonewfoignewtowenffnoeiwowjfninoiwfen
 # anton
 # aoooooooooontooooo
@@ -96,7 +102,8 @@ print(f'sum: {sum(a, b)}')
 # 253235235a5323352n25235352t253523523235oo235523523523n
 # antoooooooooooooooooooooooooooooooooooooooooooooooooooon
 # unton
-# Sample Output 2:
+
+# Sample Output 2: 
 # 1 2 7 8
 
 
