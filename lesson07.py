@@ -25,20 +25,16 @@ an = a1 + (n - 1) * d
 Вариант 1
 """
 
-def prog(x):
-	a = input(x)
-	return int(a)
-
-num = int(input('Input number: ')) # для ввода автор использовал функцию 'quest'
-				   # заменил 'quest()' на 'int(input())'
+num = int(input('Input number: ')) 
 step = int(input('Input step: '))
 count = int(input('Input count: '))
 
 my_list = [num]
-for i in range(step, count + 1): # на разборе задачи вместо 'step' была 2(?)
+for i in range(step, count + 1): 
 	my_list.append(num + (i - 1) * step)
 
-print(my_list)
+print(num, step, count)
+print(*my_list)
 
 '''
 Вариант 2 (генератор списков)
