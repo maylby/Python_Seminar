@@ -172,21 +172,22 @@
 Вариант 1 (while)
 """
 # st = '1234321'
+# st = 'казаки'
 
 # def polyndrome(st):
 # 	if len(st) > 1: 
 # 		mid = len(st) // 2
 # 		left = st[:mid]
 # 		right = st[mid:]
-# 		merge_sort(left)  # заявлена, но не используется
-# 		merge_sort(right) # заявлена, но не используется
-# 		i = j = 0
+# 		# polyndrome(left)
+# 		# polyndrome(right) 
+# 		i = j = mid
 # 		while i < len(left) and j < len(right): 
-# 			if left[i] == right[j]: 
-# 				i += 1 
+# 			if left[i] != right[j]: return 'Not polyndromes'
+# 			else: 
+# 				i += 1
 # 				j += 1
-# 			return 'Not polyndromes'		
-# 		return 'Polyndrome'
+# 	return 'Polyndrome'
 
 # print(f'{st} -> {polyndrome(st)}')
 
@@ -196,20 +197,20 @@
 Вариант 2 (рекурсия)
 """
 
-s = '1234321'
-s = 'казак'
+# s = '1234321'
+# s = 'казак'
 
-def pol(s, i = 1): # 'i = 1' именованная переменная
-	               # значение неизменное, его можно указать сразу
-	if len(s) <= 1: return 'Polyndrome' # возврат: 'Polyndrome',
-                                        # если длина меньше или равна 1.
-	elif s[0] == s[-1]: # Иначе, если первый и последний элемент равны, то
-		return pol(s[i:-i]) # переходим к сравнению следующих,
-                            # второго и предпоследнего, ... и т.д.
-	return 'Not polyndromes' # Возврат: 'Not polyndromes' 
-                             # в случае невыполнения равенства (s[0] == s[-1])
-p = pol(s, i = 1)
-print(f'{s} -> {p}')
+# def pol(s, i = 1): # 'i = 1' - именованная переменная
+# 	               # значение неизменное, его можно указать сразу
+# 	if len(s) <= 1: return 'Polyndrome' # возврат: 'Polyndrome',
+#                                         # если длина меньше или равна 1.
+# 	elif s[0] == s[-1]: # Иначе, если первый и последний элемент равны, то
+# 		return pol(s[i:-i]) # переходим к сравнению следующих,
+#                             # второго и предпоследнего, ... и т.д.
+# 	return 'Not polyndromes' # Возврат: 'Not polyndromes' 
+#                              # в случае невыполнения равенства (s[0] == s[-1])
+# p = pol(s, i = 1)
+# print(f'{s} -> {p}')
 
 
 
@@ -254,15 +255,14 @@ print(f'{s} -> {p}')
 '''
 # k = 300
 # dict01 = {1: 1}
-# for i in range(n):
+# for i in range(k):
 # 	x = i - 1
 # 	sum = 0
-# 	while x >= 1: # and x < i // 2 + 1 # попробовать добавить вставку
-# 					   # для сокарщения количества циклов
-# 		if i % x == 0:
+# 	while x >= 1: 
+# 		if i % x == 0: 
 # 			sum += x
 # 		x -= 1
-# 	dict[i] = sum
+# 	dict01[i] = sum
 
 # print(dict01)
 
@@ -270,15 +270,17 @@ print(f'{s} -> {p}')
 '''
 Вариант 2 (for)
 '''
+# n = 300
 # dict01 = {1: 1}
 # for i in range(n):
 # 	x = i - 1
 # 	sum = 0
 # 	for j in range(1, i // 2 + 1): 	# перебор до середины значения,
-# 					# чтобы избежать повторов ({1: 299, ..., 299: 1})
+# 					                # чтобы избежать повторов 
+# 		                            # ({1: 299, ..., 299: 1})
 # 		if i % j == 0:
-# 			sum += x
-# 	dict[i] = sum
+# 			sum += j
+# 	dict01[i] = sum
 
 # print(dict01)
 
