@@ -161,22 +161,22 @@ print(function(n, d = 2))
 """
 st = '1234321'
 
-def polyndrome(st):
-	if len(st) > 1: 
-		mid = len(st) // 2
-		left = st[:mid]
-		right = st[mid:]
-		merge_sort(left)  # заявлена, но не используется
-		merge_sort(right) # заявлена, но не используется
-		i = j = 0
-		while i < len(left) and j < len(right): 
-			if left[i] == right[j]: 
-				i += 1 
-				j += 1
-			return 'Not polyndromes'		
-		return 'Polyndrome'
+# def polyndrome(st):
+# 	if len(st) > 1: 
+# 		mid = len(st) // 2
+# 		left = st[:mid]
+# 		right = st[mid:]
+# 		merge_sort(left)  # заявлена, но не используется
+# 		merge_sort(right) # заявлена, но не используется
+# 		i = j = 0
+# 		while i < len(left) and j < len(right): 
+# 			if left[i] == right[j]: 
+# 				i += 1 
+# 				j += 1
+# 			return 'Not polyndromes'		
+# 		return 'Polyndrome'
 
-print(f'{st} -> {polyndrome(st)}')
+# print(f'{st} -> {polyndrome(st)}')
 
 
 
@@ -184,20 +184,20 @@ print(f'{st} -> {polyndrome(st)}')
 Вриант 2 (рекурсия)
 """
 
-s = '1234321'
+# s = '1234321'
 
-def pol(s, i = 1): # переменная 'i' заявлена, но не используется
-	               # проверить соответствие кода по семинару №6 (см. видео)
-	if len(s) <= 1: return 'Polyndrome' 
-	elif s[0] == s[-1]: 
-		return pol(s[1:-1]) # счёта начинается с 1, т.е. со 2-го элемента, 
-				    # т.к. последний элемент (-1) не захватывается,
-				    # и обратный счёт начинается с предпоследнего,  
-				    # т.е. со 2-го элемента с конца
-	return 'Not polyndromes'
+# def pol(s, i = 1): # переменная 'i' заявлена, но не используется
+# 	               # проверить соответствие кода по семинару №6 (см. видео)
+# 	if len(s) <= 1: return 'Polyndrome' 
+# 	elif s[0] == s[-1]: 
+# 		return pol(s[1:-1]) # счёта начинается с 1, т.е. со 2-го элемента, 
+# 				    # т.к. последний элемент (-1) не захватывается,
+# 				    # и обратный счёт начинается с предпоследнего,  
+# 				    # т.е. со 2-го элемента с конца
+# 	return 'Not polyndromes'
 
-p = pol(s, i = 1)
-print(f'{s} -> {p}')
+# p = pol(s, i = 1)
+# print(f'{s} -> {p}')
 
 
 
