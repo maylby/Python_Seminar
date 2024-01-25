@@ -234,7 +234,8 @@ an = a1 + (n - 1) * d
 """
 # n = 300
 # res = {}
-# for x, y in res.items(): # 'item()'выяснить назначение функции 
+# for x, y in res.items(): # 'item()' возвращает копию списка, 
+#                          # пар ключ-значение словаря
 # 	if y < n:
 # 		if res[y] == x and x != y and x < y:
 # 			print(x, y)
