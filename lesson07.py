@@ -333,3 +333,17 @@ print(num4) # [1, 2, 3, 5, 6, 7, 9, 0], при "1"
        
 # Вывод:
 # ok
+
+"""
+Решение
+"""
+
+values = [1, 23, 42, 'asdfg']
+transformed_values = list(map(lambda x: x, values)) # запись "lambda x: x", выдаёт "ok"
+                                                    # запись "lambda x: 1", выдаёт "fail"
+if values == transformed_values:
+ print('ok') # "ok", если "lambda x: x"
+else:
+ print('fail')  # "fail", если "lambda x: 1"
+                # Код работает без использования "Tab", достаточно "пробела"
+                # Читабельность кода, в данном случае, даже лучше
