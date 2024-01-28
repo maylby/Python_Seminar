@@ -8,11 +8,12 @@
 Разбор ДЗ-07
 
 Задача 1 
+
+print_operation_table
 '''
 # https://autotest.gb.ru/problems/83?lesson_id=391158&_ga=2.55648939.1223630724.1705653773-1736153193.1704617193
-
-# print_operation_table
 '''
+
 Напишите функцию 
 '''
 # print_operation_table(operation, num_rows, num_columns), 
@@ -55,3 +56,22 @@
 Вариант 1 
 (Марина Вершинина)
 """
+num_rows = int(input('Number rows: '))
+num_columns = int(input('Number columns: '))
+
+def print_operation_table(operation, num_rows, num_columns):
+    res = []
+    if num_rows < 2:
+        print('Error!')
+    else:
+        for i in range(1, num_rows + 1):
+            for j in range(1, num_columns + 1):
+                res.append(operation(i, j))
+
+            print(*res) # вариант вывода 1
+            res = []
+        
+        # for i in range(0, len(res), num_columns):
+        #     print(*res[0 + i: num_columns + i]) # вариант вывода 2
+
+print_operation_table(lambda x, y: x * y, num_rows, num_columns)
