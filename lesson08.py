@@ -69,7 +69,10 @@ def print_operation_table(operation, num_rows, num_columns):
                 res.append(operation(i, j))
 
             print(*res) # вариант вывода 1
-            res = []
+            res = [] # обнуление списка для каждой новой строки таблицы,
+                     # т.е. каждая строка таблицы - это новый список,
+                     # передаваемый после заполнения в первый "res" (стр.62),
+                     # где и записывается вся таблица до завершения цикла 
         
         # for i in range(0, len(res), num_columns):
         #     print(*res[0 + i: num_columns + i]) # вариант вывода 2
