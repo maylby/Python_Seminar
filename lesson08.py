@@ -56,28 +56,28 @@ print_operation_table
 Вариант 1 
 (Марина Вершинина)
 """
-num_rows = int(input('Number rows: '))
-num_columns = int(input('Number columns: '))
+# num_rows = int(input('Number rows: '))
+# num_columns = int(input('Number columns: '))
 
-def print_operation_table(operation, num_rows, num_columns):
-    res = []
-    if num_rows < 2:
-        print('Error!')
-    else:
-        for i in range(1, num_rows + 1):
-            for j in range(1, num_columns + 1):
-                res.append(operation(i, j))
+# def print_operation_table(operation, num_rows, num_columns):
+#     res = []
+#     if num_rows < 2:
+#         print('Error!')
+#     else:
+#         for i in range(1, num_rows + 1):
+#             for j in range(1, num_columns + 1):
+#                 res.append(operation(i, j))
 
-            print(*res) # вариант вывода 1
-            res = [] # обнуление списка для каждой новой строки таблицы,
-                     # т.е. каждая строка таблицы - это новый список,
-                     # передаваемый после заполнения в первый "res" (стр.62),
-                     # где и записывается вся таблица до завершения цикла 
+#             print(*res) # вариант вывода 1
+#             res = [] # обнуление списка для каждой новой строки таблицы,
+#                      # т.е. каждая строка таблицы - это новый список,
+#                      # передаваемый после заполнения в первый "res" (стр.62),
+#                      # где и записывается вся таблица до завершения цикла 
 
-        # for i in range(0, len(res), num_columns):
-        #     print(*res[0 + i: num_columns + i]) # вариант вывода 2
+#         # for i in range(0, len(res), num_columns):
+#         #     print(*res[0 + i: num_columns + i]) # вариант вывода 2
 
-print_operation_table(lambda x, y: x * y, num_rows, num_columns)
+# print_operation_table(lambda x, y: x * y, num_rows, num_columns)
 
 
 # 00:18:25
@@ -105,9 +105,16 @@ print_operation_table(lambda x, y: x * y, num_rows, num_columns)
 если во фразе несколько слов, то они разделяются дефисами.
 Фразы отделяются друг от друга пробелами.
 
-Стихотворение  Винни-Пух передаст вам автоматически в переменную stroka 
-в виде строки. В ответе напишите Парам пам-пам, 
-если с ритмом все в порядке и Пам парам, если с ритмом не все в порядке.
+Стихотворение  Винни-Пух передаст вам автоматически 
+в переменную stroka в виде строки. В ответе напишите 
+Парам пам-пам, если с ритмом все в порядке и 
+Пам парам, если с ритмом не все в порядке.
+'''
+# P.S. 
+# Правильность ритма определяется 
+# равным количеством гласных в каждой строке.
+# Количество согласных в строке на ритм не влияет.
+'''
 Если фраза только одна, то ритм определить не получится 
 и необходимо вывести: 
 "Количество фраз должно быть больше одной!".
@@ -119,3 +126,28 @@ print_operation_table(lambda x, y: x * y, num_rows, num_columns)
 
 # На выходе:
 # Парам пам-пам
+
+
+'''
+Решение
+'''
+stroka = 'пара-ра-рам тарам-пам-пам па-ра-па-дам'
+list_1 = stroka.split(" ")
+glasny = ['а','я','о','ё','у','ю','ы','и','э','е']
+res = list()
+def puh():
+    if len(list_1) == 1: return "Фраз должно быть больше одной"
+    else:
+        for i in list_1:
+            count = 0
+            for j in i:
+                if j in glasny:
+                    count += 1
+            res.append(count)
+            
+        if len(res) == res.count(res[0]): # 1-й вариант сравнения
+        # if len(set(res)) == 1: # 2-й вариант сравнения
+            return 'Парам пам-пам'
+        return 'Пам парам'
+    
+print(puh())
