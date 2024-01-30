@@ -143,8 +143,8 @@ def puh():
     if len(list_1) == 1: return "Фраз должно быть больше одной"
     else:
         for i in list_1: # проход по всему списку list_1
-            count = 0 	# подсчёт, начиная с нуля,
-            for j in i: # для 'j' из множества 'i',
+            count = 0 	 # подсчёт, начиная с нуля,
+            for j in i:  # для 'j' из множества 'i',
                 if j in glasny: # если 'j' - гласный, то 
                     count += 1  # прибавляем в счётчик единицу
             res.append(count) # добавляем 'count' в результат (res)
@@ -197,9 +197,9 @@ def puh():
             # for j in i: # строка изъята и помещена в генератор списка
             #     if j in glasny: # эта строка тоже в генераторе списка
 
-            print([j for j in i if j in glasny])     # вывод генератора списка (гласные)
-            # print([j for j in i if j not in glasny]) # вывод с 'not' (согласные)
-            # print([j for j in i if j in ""])         # вывод: [], при пустом списке (см. кавычки)
+            # print([j for j in i if j in glasny])     # 'glasny' - вывод гласных
+            # print([j for j in i if j not in glasny]) # 'not' - вывод согласных
+            # print([j for j in i if j in ""])         # кавычки - вывод: [], при пустом списке
 	
         # print(res)  # выводит числом количество гласных в строке -> 4 (четыре гласных), 
 		            # при использовании 'len()' в генераторе списка
@@ -227,20 +227,23 @@ print(puh())
 
 Решение с помощью функции высшего порядка
 '''
-# num = '2 4 -23 5 13 897 11'
 
-# print(*list(filter(lambda x: len(str(abs(int(x)))) == 2, num.split()))) # -23 13 11
-# 							        # str(abs(int(x))) вместо replace()
-# 							        # abs(int(x)) - перевод х в цифру
-# 							        # str() - возврат в строку
+num = '2 9 4 -23 5 13 897 11'
 
-# print(*list(filter(lambda x: 9 < abs(int(x)) < 100, num.split()))) # решение через диапазон чисел
+print(*list(filter(lambda x: len(str(abs(int(x)))) == 2, num.split()))) # -23 13 11
+							        # str(abs(int(x))) вместо replace()
+							        # abs(int(x)) - перевод х в цифру
+							        # str() - возврат в строку
 
-# print(*list(filter(lambda x: len(x) == 2, num.split()))) # 13 11 
-# 					 		                             # не выводит отрицательных чисел, т.к.
-# 						                                 # числа вопринимаются, как строки
+print(*list(filter(lambda x: 9 < abs(int(x)) < 100, num.split())))  # решение через диапазон чисел
+                                                                    # диапазон от 9 до 100 включает
+                                                                    # в себя все двузначные числа
 
-# print(*list(filter(lambda x: len(x.replace('-', '')) == 2, num.split())))
+print(*list(filter(lambda x: len(x) == 2, num.split()))) # 13 11 
+					 		                             # не выводит отрицательных чисел, т.к.
+						                                 # числа вопринимаются, как строки
+
+print(*list(filter(lambda x: len(x.replace('-', '')) == 2, num.split())))
 					                                     # filter() - применить оператор
 					                                     # lambda x: - функция высшего порядка 
 					                                     # split() - разбить 'num' на элементы
