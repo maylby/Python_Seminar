@@ -255,4 +255,86 @@ print(*list(filter(lambda x: len(x.replace('-', '')) == 2, num.split())))
 					                                     # print() - вывод: -23 13 11
 
 
+
 # 01:02:30
+"""
+Работа с файлами
+
+
+Задача №49. 
+Решение в группах
+
+Создать телефонный справочник с
+возможностью импорта и экспорта данных в формате .txt. 
+Данные, которые должны находиться в файле:
+Фамилия, имя, отчество, номер телефона. 
+
+1. Программа должна выводить данные
+2. Программа должна сохранять данные в текстовом файле
+3. Пользователь может ввести одну из характеристик 
+для поиска определенной записи (Например имя или фамилию человека)
+4. Использование функций. Ваша программа не должна быть линейной.
+"""
+
+
+# Иванов, Иван, 111, описание Иванова
+# Петров,	Петр,	222,	описание Петрова
+# Васичкина, Василиса, 333, описание Васичкиной
+# Питонов, Антон, 777, умеет в Питон
+
+
+# 01:14:39
+
+'''
+Функция для записи, хранения 
+и поиска данных телефоных номеров
+'''
+
+''' Функция work_with_phonebook '''
+
+def work_with_phonebook():
+
+    choice = show_menu()
+    phone_book = read_txt('phonebook.txt')
+
+    while (choice != 7):
+
+        if choice == 1:
+            print_result(phone_book) # tkinter - библиотека (скачать)
+                                     # Доп. инфа для любопытных от Сердюка
+                                     # визуальная часть программы
+        elif choice == 2:
+            last_name = input('lastname ')
+            print(find_by_lastname(phone_book, last_name))
+        elif choice == 3:
+            last_name = input('lastname ')
+            new_number = input('new number ')
+            print(change_number(phone_book, last_name, new_number))
+
+        elif choice == 4:
+           last_name = input('lastname ') 
+           print(delete_by_lastname(phone_book, last_name))
+        elif choice == 5:
+            new_number = input('new number ')
+            print(find_by_number(phone_book, number))
+        elif choice == 6:
+            user_data = input('new data ')
+            add_user(phone_book, user_data)
+            write_txt('phonebook.txt', phone_book)
+        
+        choice = show_menu()
+
+
+# 01:14:45
+''' Функция show_menu '''
+
+
+
+# 01:19:15
+''' Функция read_txt'''
+
+
+# 01:31:45
+''' Функция write_txt'''
+
+# 01:42:00
