@@ -88,8 +88,9 @@ input('no: N', ) # no: N
 # Goodbye
 
 
-# 00:44:20
+
+# 00:44:00
 """
-Ссылка на сервис google-colab для решения задачи
+Ссылка на сервис google-colab для решения задачи (?)
 """
 # https://colab.research.google.com/drive/11udiVDM85HFjqLqDqfz0ef9NLBgHUWn-?pli=1#scrollTo=h0kTGcMNHRnW
