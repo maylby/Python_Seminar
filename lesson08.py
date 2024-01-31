@@ -306,9 +306,10 @@ def work_with_phonebook():
     while (choice != 7):
 
         if choice == 1:
-            print_result(phone_book) # tkinter - библиотека (скачать)
-                                     # Доп. инфа для любопытных от Сердюка
+            print_result(phone_book) # tkinter - библиотека (скачать) 
+                                     # создание графических приложений на Pyhton
                                      # визуальная часть программы
+                                     # (доп. инфа для любопытных)
         elif choice == 2:
             last_name = input('lastname ')
             print(find_by_lastname(phone_book, last_name))
