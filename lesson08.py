@@ -405,10 +405,15 @@ def read_txt(filename):
 ''' Функция write_txt'''
 
 def write_txt(filename, phone_book): # функция имеет два значения (имя файла и данные)
-    with open('phonebook.txt', 'w', encoding = 'utf-8') as phout:
+    
+    with open(filename, 'w', encoding = 'utf-8') as phout:  # filename, на семинаре, обозначен, как
+                                                            # 'phonebook.txt', но в коде переменная
+                                                            # filename нигде не принимает строку
+                                                            # в виде: filename = 'phonebook.txt'
         for i in range(len(phone_book)):
             s = ''
             for v in phone_book[i].values(): # 'v' - значение, которое ищем в наших словарях
+                                             # Что такое 'values' код не понимает (не подсвечивает)
                 s += v + ','
             phout.write(f'{s[:-1]}\n')  # phout.write - построчная запись
                                         # s[] - срез строки, найденой в результате перебора
