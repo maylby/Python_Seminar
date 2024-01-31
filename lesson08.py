@@ -402,10 +402,10 @@ def read_txt(filename):
 
 
 # 01:31:45
-''' Функция write_txt'''
+''' Функция write_txt '''
 
 def write_txt(filename, phone_book): # функция имеет два значения (имя файла и данные)
-    
+
     with open(filename, 'w', encoding = 'utf-8') as phout:  # filename, на семинаре, обозначен, как
                                                             # 'phonebook.txt', но в коде переменная
                                                             # filename нигде не принимает строку
@@ -425,5 +425,5 @@ def write_txt(filename, phone_book): # функция имеет два знач
 work_with_phonebook()
 
 ''' 
-(см. решение в 01_ДЗ-08)
+(см. решение в 'home08.py' (01_ДЗ-08))
 '''
