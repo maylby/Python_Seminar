@@ -86,3 +86,10 @@ input('yes: Y', ) # yes: Y
 input('no: N', ) # no: N
 # n
 # Goodbye
+
+
+# 00:44:20
+"""
+Ссылка на сервис google-colab для решения задачи
+"""
+# https://colab.research.google.com/drive/11udiVDM85HFjqLqDqfz0ef9NLBgHUWn-?pli=1#scrollTo=h0kTGcMNHRnW
