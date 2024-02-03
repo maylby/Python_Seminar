@@ -16,6 +16,7 @@
 # for i in list_1:
 # 	print(*i)
 
+
 '''
 Вход / Выход
 '''
@@ -89,7 +90,7 @@ def delete():
 '''
 Редактирование
 '''
-def redact():
+def redact(): 
 	list_1 = reade()
 	red = input('Кого редактировать?\n: ')
 	find = list(filter(lambda x: red in x[0], list_1))
@@ -115,7 +116,7 @@ def redact():
 	if len(find) > 1: 
 		num = input('Введите номер телефона: ') 
 		for j in find: 	
-			print(num, j[1])
+			# print(num, j[1])
 			if num == j[1]:
 				uno = input('Изменить: ФИ - 1, телефон - 2 ')
 				if uno == '1':
@@ -125,8 +126,7 @@ def redact():
 				else:
 					print('Введена неверная команда')
 					redact()
-			else: 
-				bum += 1
+			else: bum += 1
 		if len(find) == bum: 
 			print('Такого номера нет')
 	save(list_1)
@@ -168,8 +168,6 @@ def add_name():
 def save(list_1):
 	listes = list_1
 	with open('phonebook.txt','w+', encoding='utf-8') as Phone:
-		# режим 'w' при вводе удаляет весь список
-		# изменил на 'r+'
 		for i in listes:
 			Phone.write(f'{i[0]},{i[1]}\n') # 'i[0]' - ФИ, 'i[1]' - номер
 		list_1 += listes
@@ -205,7 +203,7 @@ def start(): # Код, одновременно со списком пункто
 			 # Как исправить?
 	
 	# data = show_menu() # Вызов функции меню команд кода Сердюка
-	
+
 	data = input("\nКак продолжить?\n1-Показать список контактов\n"
 				"2-Hайти контакт\n3-Добавить контакт\n"
 				"4-Редактировать контакт\n5-Удалить\n") 
