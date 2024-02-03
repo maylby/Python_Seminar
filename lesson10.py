@@ -20,7 +20,7 @@
 '''
 Вход / Выход
 '''
-def visit():
+def outlog():
 	picachu = input('\nПродолжить?\n1-да,\n2-нет\n: ')
 	if picachu == '1': 
 		start() # функция меню выбора действий (см. внизу)
@@ -29,10 +29,10 @@ def visit():
 		exit() # это вшитая фукция Pyhton?
 	else: 
 		print('Введена не верная команда')
-		visit()
+		outlog()
 
 '''
-Поиск контакта
+Поиск
 '''
 def find_name():
 	list_1 = reade() # вывод найденных данных
@@ -41,16 +41,16 @@ def find_name():
 	if len(filde):# != 0:
 		for i in filde:
 			print(i)
-			visit()
+			outlog()
 	else:
 		nike = input('ФИ нет в списке контактов. Добавить?\n1-да\n2-нет\n: ')
 		if nike == '1':
 			add_name() # запуск функции "Добавить новый контакт"
 		if nike == '2':
-			visit() # возврат на страницу "Входа"
+			outlog() # возврат на страницу "Входа"
 		else:
 			print('Введена не верная команда')
-			visit()
+			outlog()
 # find_name()
 
 
@@ -69,21 +69,21 @@ def delete():
 	if len(rem) != 0: print(*rem, sep ='\n')		
 	if len(rem) == 1:
 		list_1.remove(rem[0])
-		save(list_1)
-		visit()
+		create(list_1)
+		outlog()
 	elif len(rem) > 1:
 		num = input('Введите номер телефона: ')
 		for j in rem:
 			if num == j[1]:
 				list_1.remove(j)
-				save(list_1)
-				visit()
+				create(list_1)
+				outlog()
 		if len_list_1 == len(list_1):
 			print('Нет номера') # Номер удалён?
-			visit()
+			outlog()
 	else: 
 		print('Контакта нет') # Контакт удалён?
-		visit()
+		outlog()
 		
 
 
@@ -99,13 +99,12 @@ def redact():
 			print(i)
 	else: 
 		print('ФИ нет в контактах')
-		visit()
+		outlog()
 	if len(find) == 1:
 		for i in find: 
 			uno = input('Изменить ФИ-1, телефон-2\n: ')
 			if uno == '1':
-				list_1[list_1.index(i)][0] = input('ФИ: ') 	# Разделить имя и фамилию
-															# Вести раздельно: [0], [1]
+				list_1[list_1.index(i)][0] = input('ФИ: ') 	# Разделить имя и фамилию (?)
 			elif uno == '2':
 				list_1[list_1.index(j)][1] = input('Телефон: ')
 			else: 
@@ -129,8 +128,8 @@ def redact():
 			else: bum += 1
 		if len(find) == bum: 
 			print('Такого номера нет')
-	save(list_1)
-	visit()	
+	create(list_1)
+	outlog()	
 
 
 
@@ -150,34 +149,33 @@ def add_name():
             print('Такой номер и ФИ уже есть')
         else:
             list_1.append(list_2)
-            save(list_1)
+            create(list_1)
             print('Контакт добавлен')
-            visit()
+            outlog()
     elif saves == '2':
-        visit()
+        outlog()
     else:
         print('Введена неверная команда')
-        visit()
+        outlog()
 	# print(list_1)
 
 
 '''
 Функция ввода (w), 
-(изменение значений + создание новой записи)
+(создание новой записи)
 '''
-def save(list_1):
+def create(list_1):
 	listes = list_1
 	with open('phonebook.txt','w+', encoding='utf-8') as Phone:
 		for i in listes:
 			Phone.write(f'{i[0]},{i[1]}\n') # 'i[0]' - ФИ, 'i[1]' - номер
 		list_1 += listes
 	return list_1 # добавил возврат 'return list_1'
-# save()
+create()
 
 
 '''
 Функция чтения (r)
-(чтение + изменение значений)
 '''
 def reade(): 
 	spros = []
@@ -212,7 +210,7 @@ def start(): # Код, одновременно со списком пункто
 					# список контактов выдаёт, только запись ниже
 		spros = reade()
 		print(*spros, sep ='\n')
-		visit()
+		outlog()
 	elif data == '2': 
 		find_name()
 	elif data == '3': 
