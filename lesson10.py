@@ -20,11 +20,11 @@
 Вход / Выход
 '''
 def visit():
-	picachu = input('Продолжить?\n1-да,\n2-нет\n: ')
+	picachu = input('\nПродолжить?\n1-да,\n2-нет\n: ')
 	if picachu == '1': 
 		start() # функция меню выбора действий (см. внизу)
 	elif picachu == '2':
-		print('Пока!')
+		print('Пока!\n')
 		exit() # это вшитая фукция Pyhton?
 	else: 
 		print('Введена не верная команда')
@@ -181,7 +181,7 @@ def save(list_1):
 Функция чтения (r)
 (чтение + изменение значений)
 '''
-def reade():
+def reade(): 
 	spros = []
 	with open('phonebook.txt','r', encoding='utf-8') as Phone:
 		for i in Phone.readlines():
@@ -206,9 +206,11 @@ def start():
 	data = input("\nКак продолжить?\n1-Показать список контактов\n"
 				"2-Hайти контакт\n3-Добавить контакт\n"
 				"4-Редактировать контакт\n5-Удалить\n")
-	if data == '1': reade()
-		# spros = reade()
-		# print(spros, sep ='\n')
+	if data == '1': 
+		# reade()
+		spros = reade()
+		print(*spros, sep ='\n')
+		visit()
 	elif data == '2': 
 		find_name()
 	elif data == '3': 
@@ -218,7 +220,7 @@ def start():
 	elif data == '5': 
 		delete()
 
-	visit()
+	
 
 # def show_menu():
 # 	print("\nВыберите наобходимое действие:\n"
