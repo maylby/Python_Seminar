@@ -240,5 +240,52 @@ def start(): # Код, одновременно со списком пункто
 start()
 
 
-# 00:33:20
+# 00:46:00
+"""
+Задача 1 (разбор ДЗ-09)
+"""
+# https://autotest.gb.ru/problems/113?lesson_id=391160&_ga=2.108864450.1926430629.1706850067-1736153193.1704617193
+"""
+Определить среднюю стоимость дома
 
+Дан файл california_housing_train.csv. Определить среднюю стоимость дома, 
+где количество людей от 0 до 500 (population) и сохранить ее в переменную avg. 
+Используйте модуль pandas.
+
+
+Решение (Александр Верзун)
+"""
+import pandas as pd # Сообщение VSCode: "не удалось импортировать «pandas»"
+df = pd.read_csv('california_housing_train.csv')
+
+avg = df[(df['population'] >= 0) & (df['population'] <= 500)] ['median_house_value'].mean()
+print(avg) 
+
+
+# 00:49:00
+"""
+Задача 2
+"""
+# https://autotest.gb.ru/problems/114?lesson_id=391160&_ga=2.4481907.1926430629.1706850067-1736153193.1704617193
+"""
+Максимальная households
+
+Дан файл california_housing_train.csv.
+Найти максимальное значение переменной "households" 
+в зоне минимального значения переменной min_population 
+и сохраните это значение в переменную max_households_in_min_population.
+Используйте модуль pandas
+ 
+Без библиотек "pandas" код в VSCode работать не будет.
+
+
+Решение (Александр Верзун (автотест))
+"""
+
+import pandas as pd # Сообщение VSCode: "не удалось импортировать «pandas»"
+df = pd.read_csv('california_housing_train.csv')
+# x = 30
+min_population = df['population'].min()
+
+max_households_in_min_population = df[df['population'] <= min_population] ['households'].max()
+print(max_households_in_min_population)
