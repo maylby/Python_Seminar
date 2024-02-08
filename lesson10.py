@@ -95,7 +95,8 @@ def redact():
 	list_1 = reade()
 	red = input('Кого редактировать?\n: ')
 	find = list(filter(lambda x: red in x[0], list_1))
-	if len(find):
+	if len(find): 	# Удалил из кода лишнюю запись '!= 0', 
+					# код не повреждён, "редактор" работает 
 		for i in find: 
 			print(i)
 	else: 
