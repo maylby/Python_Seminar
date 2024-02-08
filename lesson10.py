@@ -172,7 +172,7 @@ def create(list_1):
 			Phone.write(f'{i[0]},{i[1]}\n') # 'i[0]' - ФИ, 'i[1]' - номер
 		list_1 += listes
 	return list_1 # добавил возврат 'return list_1'
-create()
+# create()
 
 
 '''
