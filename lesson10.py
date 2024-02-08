@@ -282,7 +282,8 @@ print(avg)
 Решение (Александр Верзун (автотест))
 """
 
-import pandas as pd # Сообщение VSCode: "не удалось импортировать «pandas»"
+import pandas as pd # Сообщение VSCode: 
+					# "не удалось импортировать «pandas»"
 df = pd.read_csv('california_housing_train.csv')
 # x = 30
 min_population = df['population'].min()
