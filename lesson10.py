@@ -95,7 +95,7 @@ def redact():
 	list_1 = reade()
 	red = input('Кого редактировать?\n: ')
 	find = list(filter(lambda x: red in x[0], list_1))
-	if len(find) != 0:
+	if len(find):
 		for i in find: 
 			print(i)
 	else: 
