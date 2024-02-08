@@ -25,22 +25,22 @@ an = a1 + (n - 1) * d
 Вариант 1
 """
 
-# num = int(input('Input number: ')) 
-# step = int(input('Input step: '))
-# count = int(input('Input count: '))
+num = int(input('Input number: ')) 
+step = int(input('Input step: '))
+count = int(input('Input count: '))
 
-# my_list = [num]
-# for i in range(step, count + 1): 
-# 	my_list.append(num + (i - 1) * step)
+my_list = [num]
+for i in range(step, count + 1): 
+	my_list.append(num + (i - 1) * step)
 
-# print(num, step, count)
-# print(*my_list)
+print(num, step, count)
+print(*my_list)
 
 '''
 Вариант 2 (генератор списков)
 '''
-# my_list = [num + i * step for i in range(count)]
-# print(my_list)
+my_list = [num + i * step for i in range(count)]
+print(my_list)
 
 
 """
@@ -65,22 +65,22 @@ an = a1 + (n - 1) * d
 
 Вариант 1
 """
-# #	         1                          9            13  14                19
-# list1 = [-5, 9, 0, 3, -1, -2, 1, 4, -2, 10, 2, 0, -9, 8, 10, -9, 0, -5, -5, 7]
-# #	      0  1  2  3   4   5  6  7   8  9  10  11 12  13 14  15  16 17  18  19
+#	         1                          9            13  14                19
+list1 = [-5, 9, 0, 3, -1, -2, 1, 4, -2, 10, 2, 0, -9, 8, 10, -9, 0, -5, -5, 7]
+#	      0  1  2  3   4   5  6  7   8  9  10  11 12  13 14  15  16 17  18  19
 
-# min = int(input('min: '))
-# max = int(input('max: '))
+min = int(input('min: '))
+max = int(input('max: '))
 
-# def search(arr): # 'arr' - пустой список для передачи значений 'list1'
-# 	result = []
-# 	for i in range(len(arr)): 
-# 		if min <= list1[i] <= max: # допустимая форма записи
-# 			result.append(i) # добавление индексов элементов
-# 	return result 
+def search(arr): # 'arr' - пустой список для передачи значений 'list1'
+	result = []
+	for i in range(len(arr)): 
+		if min <= list1[i] <= max: # допустимая форма записи
+			result.append(i) # добавление индексов элементов
+	return result 
 
-# print('Ввод: ', list1)
-# print('Вывод:', search(list1)) 
+print('Ввод: ', list1)
+print('Вывод:', search(list1)) 
 
 
 
@@ -136,71 +136,75 @@ an = a1 + (n - 1) * d
 
 Вариант 1 (Александр Верзун)
 """
-# fridge = ['222anton456',
-# 	  'a1n1t1o1n1',
-# 	  '0000a0000n00t00000o000000n',
-# 	  'gylfole',
-# 	  'richard',
-# 	  'ant0n']
+fridge = ['222anton456',
+	  'a1n1t1o1n1',
+	  '0000a0000n00t00000o000000n',
+	  'gylfole',
+	  'richard',
+	  'ant0n']
 
-# virus = 'anton'
+virus = 'anton'
 
-# for k in range(len(fridge)): # перебор всего списка кодов 'fridge'
-# 	j = 0 # стартовое значение переменной индекса вируса (virus)
-# 	for i in fridge[k]:
-# 		if i.lower() == virus[j]: # если буква слова и вируса совпадают,
-# 			j += 1		  # перейти к следующей букве
-# 			if j == 5: # Какой записью заменить число? Этой (?) virus[j + 1] 
-# 				   # если все значения вируса проверены, то
-# 				print(k + 1, end =' ')  # перейти к следующему коду списка
-# 				break 			# завершить по окончанию списка
+for k in range(len(fridge)): # перебор всего списка кодов 'fridge'
+	j = 0 # стартовое значение переменной индекса вируса (virus)
+	for i in fridge[k]:
+		if i.lower() == virus[j]: # если буква слова и вируса совпадают,
+			j += 1		  # перейти к следующей букве
+			if j == 5: # Какой записью заменить число? Этой (?) virus[j + 1] 
+				   # если все значения вируса проверены, то
+				print(k + 1, end =' ')  # перейти к следующему коду списка
+				break 			# завершить по окончанию списка
 
 
 # 00:20:30
 """
 Вариант 2 (Андрей Лопатько)
 """
+# Проверить правильность кода по разбору задачи на семинате (00:20:30)
 
-# def antivirus(str1, exmpl): # <- функция антивирус
-# 	index_01 = str1.find(exmpl[0])
-# 	if index_01 < 0: return False # если первого символа нет, завершить проверку
-# 				      # что будет, если записать index_01[i] < 0?
-# 	else: 
-# 		 res = str1[index_01] # в переменной (res) записываем вирус
+def antivirus(str1, exmpl): # <- функция антивирус
 	
-# 	for i in range(1, len(exmpl)):
-# 		# print(index[i])
-# 		index_02 = str1[index_01 + 1:].find(exmpl[i]) + index_01 + 1
-# 						# метод 'find()' возвращает идекс буквы,
-# 						# если не находит возвращает -1
-# 		# print(str1[index_0], index_0)
-# 		if index_02 > index_01: # условие на случай, когда буква не будет найдена,
-# 					# т.е. index_02 будет идентифицирован как -1							# и будет меньше любого index_01, 
-# 					# что противоречит условию (index_02 > index_01)
-# 			res += str1[index_02] # добавление найденного элемента
-# 			index_01 = index_02 # переприсваиваем (?) значение и
-# 					    # начинаем заново проверять остаток строки
-# 	# print(res)
-# 	# if res == exmpl: return 'Заражено!'
-# 	# else: return 'Не заражено'
-# 	return res == exmpl # сравнение результата с исходником
-# 			    # если совпадает, то возвращает: 'Заражено!'
-# 			    # иначе, возрат - 'Не заражено'
+	index_01 = str1.find(exmpl[0])  # (?) "find" не подсвечивается
+	if index_01 < 0: return False # если первого символа нет, завершить проверку
+				      # что будет, если записать index_01[i] < 0?
+	else: 
+		res = str1[index_01] # в переменной (res) записываем вирус
+	
+        for i in range(1, len(exmpl)): # (?) VSCode указывает на ошибку в "for"
+            # print(index[i]) # (???) проверить "index"
+			
+            index_02 = str1[index_01 + 1:].find(exmpl[i]) + index_01 + 1
+                            # метод 'find()' возвращает идекс буквы,
+                            # если не находит возвращает -1
+            # print(str1[index_0], index_0) # проверить "index_0"
+			
+            if index_02 > index_01: # условие на случай, когда буква не будет найдена,
+                        # т.е. index_02 будет идентифицирован как -1							# и будет меньше любого index_01, 
+                        # что противоречит условию (index_02 > index_01)
+                res += str1[index_02] # добавление найденного элемента
+                index_01 = index_02 # переприсваиваем (?) значение и
+                            # начинаем заново проверять остаток строки
+        # print(res)
+        # if res == exmpl: return 'Заражено!'
+        # else: return 'Не заражено'
+        return res == exmpl # сравнение результата с исходником
+			    # если совпадает, то возвращает: 'Заражено!'
+			    # иначе, возрат - 'Не заражено'
 
-# exsample = 'anton' # <- сигнатура
-# 		   # при необходимости можно заменить любой другой
+exsample = 'anton' # <- сигнатура
+		   # при необходимости можно заменить любой другой
 
-# str_arr = [
-# 	   '222anton456',
-# 	   'a1n1t1o1n1',
-# 	   '0000a0000n00t00000o000000n',
-# 	   'gylfole',
-# 	   'richard',
-# 	   'ant0n']
+str_arr = [
+	   '222anton456',
+	   'a1n1t1o1n1',
+	   '0000a0000n00t00000o000000n',
+	   'gylfole',
+	   'richard',
+	   'ant0n']
 
-# for i in range(len(str_arr)): # реализация:
-# 	if antivirus(str_arr[i], exsample):
-# 		print(i + 1, end = ' ')
+for i in range(len(str_arr)): # реализация:
+	if antivirus(str_arr[i], exsample):
+		print(i + 1, end = ' ')
 
 
 
@@ -216,29 +220,29 @@ an = a1 + (n - 1) * d
 
 Вариант 1 (семинар 6)
 """
-# n = 300
-# dict01 = {}
-# for i in range(n):
-# 	sum = 0
-# 	for j in range(1, i // 2 + 1): 
-# 		if i % j == 0:
-# 			sum += j
-# 	dict01[i] = sum
+n = 300
+dict01 = {}
+for i in range(n):
+	sum = 0
+	for j in range(1, i // 2 + 1): 
+		if i % j == 0:
+			sum += j
+	dict01[i] = sum
 
-# print(dict01)
-# print(len(dict01))
+print(dict01)
+print(len(dict01))
 
 
 """
 Вариант 2 (Андрей Лопатько)
 """
-# n = 300
-# res = {}
-# for x, y in res.items(): # 'item()' возвращает копию списка, 
-#                          # пар ключ-значение словаря
-# 	if y < n:
-# 		if res[y] == x and x != y and x < y:
-# 			print(x, y)
+n = 300
+res = {}
+for x, y in res.items(): # 'item()' возвращает копию списка, 
+                         # пар ключ-значение словаря
+	if y < n:
+		if res[y] == x and x != y and x < y:
+			print(x, y)
 
 
 
